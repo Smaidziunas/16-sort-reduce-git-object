@@ -61,34 +61,49 @@ const students = [
 // 1. atrinkti i nauja masyva studentus kurie turi masina
 // 1.1 atrinkti i nauja masyva studentus kurie turi masina su forEach
 
+// =============================== su FILTER ======
+/*
+const hasCarFiltered = students.filter((student) => {
+  return student.hasCar === true;
+});
+console.log("hasCarFiltered ===", hasCarFiltered);
+*/
+
 // ================================== REDUCE with external var
-// let arr = [];
-// const hasCarNew = students.reduce((hasCarArr, student) => {
-//   if (student.hasCar === true) {
-//     arr.push(student);
-//   }
-//   return;
-// }, arr[0]);
-
-// console.log("arr ===", arr);
-
-// console.log("studentHasCar", hasCarArr);
-// console.log("arr ===", arr);
+/*
+let arr = [];
+const hasCarNew = students.reduce((hasCarArr, student) => {
+  if (student.hasCar === true) {
+    arr.push(student);
+  }
+  return;
+}, arr[0]);
+console.log("arr ===", arr);
+*/
 
 // ================================su ForEach:
-// students.forEach((student) => {
-//   if (student.hasCar === true) {
-//     arr.push(student);
-//     console.log("student ===", student);
-//   }
-// });
-// console.log("arr ===", arr);
-
-// array.reduce(function(total, currentValue, currentIndex, arr), initialValue)
+/*
+students.forEach((student) => {
+  if (student.hasCar === true) {
+    arr.push(student);
+    console.log("student ===", student);
+  }
+});
+console.log("arr ===", arr);
+*/
 
 // 2 grazinti jauniausia zmogu
+// === su Reduce:
+/*
+const minAge = students.reduce((lowAge, sk) => {
+  if (sk.age < lowAge.age) {
+    lowAge = sk;
+  }
+  return lowAge;
+}, students[0]);
+console.log("lowAge ===", minAge);
+*/
 
-//
 // 2. Atrinkti i nauja masyva zmones is Vilniaus
 // 3. Atrinkti i nauja masyva moteris
 // 4. suzinoti ar yra nors vienas zmogus is Kauno
