@@ -1,5 +1,5 @@
 "use strict";
-console.log("main.js");
+console.log("students.js");
 
 const students = [
   {
@@ -61,25 +61,28 @@ const students = [
 // 1. atrinkti i nauja masyva studentus kurie turi masina
 // 1.1 atrinkti i nauja masyva studentus kurie turi masina su forEach
 
-let arr = [];
+// ================================== REDUCE with external var
+// let arr = [];
 // const hasCarNew = students.reduce((hasCarArr, student) => {
 //   if (student.hasCar === true) {
 //     arr.push(student);
-//     console.log("student ===", student);
 //   }
-//   return hasCarArr;
-// }, students[0]);
+//   return;
+// }, arr[0]);
+
+// console.log("arr ===", arr);
 
 // console.log("studentHasCar", hasCarArr);
 // console.log("arr ===", arr);
 
-students.forEach((student) => {
-  if (student.hasCar === true) {
-    arr.push(student);
-    console.log("student ===", student);
-  }
-});
-console.log("arr ===", arr);
+// ================================su ForEach:
+// students.forEach((student) => {
+//   if (student.hasCar === true) {
+//     arr.push(student);
+//     console.log("student ===", student);
+//   }
+// });
+// console.log("arr ===", arr);
 
 // array.reduce(function(total, currentValue, currentIndex, arr), initialValue)
 
