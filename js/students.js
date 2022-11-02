@@ -61,16 +61,14 @@ const students = [
 // 1. atrinkti i nauja masyva studentus kurie turi masina
 // 1.1 atrinkti i nauja masyva studentus kurie turi masina su forEach
 
-// =============================== su FILTER ======
-/*
+/* == su FILTER ==
 const hasCarFiltered = students.filter((student) => {
   return student.hasCar === true;
 });
 console.log("hasCarFiltered ===", hasCarFiltered);
 */
 
-// ================================== REDUCE with external var
-/*
+/* == REDUCE with external var ==
 let arr = [];
 const hasCarNew = students.reduce((hasCarArr, student) => {
   if (student.hasCar === true) {
@@ -81,8 +79,7 @@ const hasCarNew = students.reduce((hasCarArr, student) => {
 console.log("arr ===", arr);
 */
 
-// ================================su ForEach:
-/*
+/* ==su ForEach ==
 students.forEach((student) => {
   if (student.hasCar === true) {
     arr.push(student);
@@ -93,8 +90,7 @@ console.log("arr ===", arr);
 */
 
 // 2 grazinti jauniausia zmogu
-// === su Reduce:
-/*
+/* ==REDUCE==
 const minAge = students.reduce((lowAge, sk) => {
   if (sk.age < lowAge.age) {
     lowAge = sk;
@@ -105,7 +101,46 @@ console.log("lowAge ===", minAge);
 */
 
 // 2. Atrinkti i nauja masyva zmones is Vilniaus
+/* ==FILTER==
+const fromVlno = students.filter((location) => location.town === "Vilnius");
+// console.log("fromVlno ===", fromVlno);
+*/
+
+// 2.1 kiek zmoniu is Siauliu?
+/* ==REDUCE==
+const nbFromSiaule = students.reduce(function (total, location) {
+  if (location.town === "Siauliai") total++;
+  return total;
+}, []);
+console.log("nbFromSiaule ===", nbFromSiaule);
+*/
+
+// 2.2 kokie yra zmoniu is siaulu indeksai?
+/* ==REDUCE==
+const iNbFromSiauliai = students.reduce((total, location) => {
+  if (location.town === "Siauliai") total.push(students.indexOf(location));
+  return total;
+}, []);
+// console.log("iNbFromSiauliai ===", iNbFromSiauliai);
+*/
+
 // 3. Atrinkti i nauja masyva moteris
+/* ==FILTER==
+const femalesArr = students.filter((object) => object.gender === "female");
+console.log("femalesArr ===", femalesArr);
+*/
+
+//3.1 Atrinkti i nauja masyva indeksus, objektu kuriuose gender ==== 'female';
+/* ==REDUCE==
+const femalesIndexes = students.reduce((indexArr, sObj) => {
+  if (sObj.gender === "female") {
+    indexArr.push(students.indexOf(sObj));
+  }
+  return indexArr;
+}, []);
+console.log("femalesIndexes ===", femalesIndexes);
+*/
+
 // 4. suzinoti ar yra nors vienas zmogus is Kauno
 // 5. suskaiciuoti kiek zmoniu yra jaunesni nei 26
 // 6  Grazinti nauja masyva kuriame yra visu zmoniu amziai;
